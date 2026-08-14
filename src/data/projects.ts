@@ -49,7 +49,6 @@ export const projects: Project[] = [
       "TF-IDF",
       "Cosine Similarity",
     ],
-    github: "https://github.com/",
     featured: true,
   },
 
@@ -68,7 +67,6 @@ export const projects: Project[] = [
       "React",
       "Data Analysis",
     ],
-    github: "https://github.com/",
     featured: true,
   },
 {
@@ -122,7 +120,6 @@ export const projects: Project[] = [
       "Database Design",
       "Data Modeling",
     ],
-    github: "https://github.com/",
     featured: false,
   },
 ];
