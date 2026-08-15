@@ -36,18 +36,39 @@ export const projects: Project[] = [
 
   {
     slug: "movie-recommender",
-    title: "Movie Recommendation System",
+    title: "Hybrid Movie Recommender System",
     category: "AI / Machine Learning",
     description:
-      "A recommendation system that suggests movies based on content similarity and user preferences.",
+      "A hybrid machine-learning recommendation system combining TF-IDF content-based filtering with SVD collaborative filtering to generate personalized movie recommendations.",
     longDescription:
-      "This project explores recommendation techniques using TF-IDF, cosine similarity and machine learning approaches to generate relevant movie recommendations.",
+      "This project combines content-based filtering and collaborative filtering in a hybrid recommendation engine. TF-IDF and cosine similarity are used to model movie content, while SVD learns user-movie preferences from ratings. The final hybrid model combines both signals, with the best evaluated configuration using 10% content-based scoring and 90% collaborative scoring. The application is integrated with the TMDB API for posters, ratings, metadata, descriptions and trailers, and is deployed as an interactive Streamlit application.",
     technologies: [
       "Python",
       "Pandas",
       "Scikit-learn",
       "TF-IDF",
-      "Cosine Similarity",
+      "SVD",
+      "Machine Learning",
+      "Streamlit",
+      "TMDB API",
+    ],
+    github:
+      "https://github.com/mulumbakakumba-cpu/movie-recommender",
+    demo:
+      "https://movie-recommender-09.streamlit.app/",
+    stats: [
+      {
+        label: "RMSE",
+        value: "0.8807",
+      },
+      {
+        label: "F1@10",
+        value: "0.0211",
+      },
+      {
+        label: "Best Weight",
+        value: "10 / 90",
+      },
     ],
     featured: true,
   },

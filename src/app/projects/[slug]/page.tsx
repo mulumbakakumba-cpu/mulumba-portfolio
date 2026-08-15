@@ -22,7 +22,10 @@ export default async function ProjectPage({
   }
 
   const isElectricityAnalytics =
-    project.slug === "electricity-analysis";
+    project.slug === "electricity-analytics";
+
+  const isMovieRecommender =
+    project.slug === "movie-recommender";
 
   return (
     <main className="min-h-screen bg-black text-white">
@@ -112,6 +115,62 @@ export default async function ProjectPage({
           </div>
         </div>
       </section>
+
+      {/* Movie Recommender - Model Performance */}
+      {isMovieRecommender && (
+        <section className="bg-zinc-950 px-6 py-24">
+          <div className="mx-auto max-w-5xl">
+            <p className="text-sm uppercase tracking-[0.3em] text-cyan-400">
+              Machine Learning
+            </p>
+
+            <h2 className="mt-4 text-3xl font-bold">
+              Hybrid recommendation engine
+            </h2>
+
+            <p className="mt-6 max-w-3xl text-lg leading-8 text-gray-400">
+              The system combines TF-IDF content-based filtering with SVD
+              collaborative filtering. Multiple hybrid weight configurations
+              were evaluated to identify the strongest recommendation setup.
+            </p>
+
+            <div className="mt-12 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+              {[
+                ["0.8807", "RMSE"],
+                ["0.6766", "MAE"],
+                ["0.0240", "Precision@10"],
+                ["0.0211", "F1@10"],
+              ].map(([value, label]) => (
+                <div
+                  key={label}
+                  className="rounded-2xl border border-white/10 bg-white/[0.03] p-6"
+                >
+                  <p className="text-2xl font-bold text-white">
+                    {value}
+                  </p>
+                  <p className="mt-2 text-sm text-gray-500">
+                    {label}
+                  </p>
+                </div>
+              ))}
+            </div>
+
+            <div className="mt-8 rounded-2xl border border-cyan-400/20 bg-cyan-400/[0.05] p-7">
+              <p className="text-sm uppercase tracking-[0.25em] text-cyan-400">
+                Best Hybrid Configuration
+              </p>
+              <p className="mt-3 text-3xl font-bold">
+                10% Content · 90% Collaborative
+              </p>
+              <p className="mt-3 max-w-3xl leading-7 text-gray-400">
+                The selected configuration gives the collaborative model the
+                strongest influence while retaining content similarity as a
+                complementary signal.
+              </p>
+            </div>
+          </div>
+        </section>
+      )}
 
       {/* Electricity Analytics - Dataset */}
       {isElectricityAnalytics && (
@@ -305,23 +364,41 @@ export default async function ProjectPage({
                       "Built analytical visualizations and an interactive Streamlit dashboard.",
                     ],
                   ]
-                : [
-                    [
-                      "01",
-                      "Research",
-                      "Understanding the problem and requirements.",
-                    ],
-                    [
-                      "02",
-                      "Build",
-                      "Designing and implementing the solution.",
-                    ],
-                    [
-                      "03",
-                      "Improve",
-                      "Testing, analyzing and refining the result.",
-                    ],
-                  ]
+                : isMovieRecommender
+                  ? [
+                      [
+                        "01",
+                        "Model",
+                        "Built TF-IDF content features and trained an SVD collaborative filtering model.",
+                      ],
+                      [
+                        "02",
+                        "Hybrid",
+                        "Combined content and collaborative scores and evaluated multiple weight configurations.",
+                      ],
+                      [
+                        "03",
+                        "Deploy",
+                        "Integrated TMDB and deployed the final recommendation application with Streamlit.",
+                      ],
+                    ]
+                  : [
+                      [
+                        "01",
+                        "Research",
+                        "Understanding the problem and requirements.",
+                      ],
+                      [
+                        "02",
+                        "Build",
+                        "Designing and implementing the solution.",
+                      ],
+                      [
+                        "03",
+                        "Improve",
+                        "Testing, analyzing and refining the result.",
+                      ],
+                    ]
             ).map(([number, title, description]) => (
               <div
                 key={number}
@@ -402,7 +479,7 @@ export default async function ProjectPage({
               rel="noopener noreferrer"
               className="rounded-full border border-cyan-400/30 bg-cyan-400/10 px-6 py-3 font-medium text-cyan-300 transition hover:border-cyan-400 hover:bg-cyan-400/20"
             >
-              Live Dashboard ↗
+              Live Demo ↗
             </a>
           )}
 
