@@ -1,46 +1,37 @@
 "use client";
 
 import { motion } from "framer-motion";
+import { ArrowRight } from "lucide-react";
 import ProjectCard from "./ProjectCard";
 import { projects } from "@/data/projects";
 
 export default function Projects() {
-  const featuredProjects = projects.filter(
-    (project) => project.featured
-  );
+  const featuredProjects = projects.filter((project) => project.featured).slice(0, 4);
 
   return (
-    <section
-      id="projects"
-      className="bg-zinc-950 px-6 py-32 text-white"
-    >
-      <div className="mx-auto max-w-6xl">
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.7 }}
-        >
-          <p className="text-sm uppercase tracking-[0.3em] text-cyan-400">
-            Selected Work
-          </p>
+    <section id="projects" className="px-5 pb-20 pt-8">
+      <div className="mx-auto max-w-[1180px]">
+        <div className="mb-5 flex items-end justify-between">
+          <div>
+            <div className="mb-3 h-1 w-6 rounded-full bg-cyan-400" />
+            <h2 className="text-xl font-extrabold uppercase tracking-tight">Selected Work</h2>
+          </div>
+          <a href="#projects" className="hidden items-center gap-2 text-sm font-semibold text-cyan-400 sm:flex">
+            View All Projects <ArrowRight size={16}/>
+          </a>
+        </div>
 
-          <h2 className="mt-5 text-4xl font-bold sm:text-5xl">
-            Things I build.
-          </h2>
-
-          <p className="mt-6 max-w-2xl text-lg leading-8 text-gray-400">
-            A selection of projects covering software engineering, data
-            analytics, artificial intelligence and databases.
-          </p>
-        </motion.div>
-
-        <div className="mt-16 grid gap-6 lg:grid-cols-2">
-          {featuredProjects.map((project) => (
-            <ProjectCard
+        <div className="grid gap-5 md:grid-cols-2 xl:grid-cols-4">
+          {featuredProjects.map((project, index) => (
+            <motion.div
               key={project.slug}
-              project={project}
-            />
+              initial={{ opacity: 0, y: 25 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: index * .08 }}
+            >
+              <ProjectCard project={project} featured={index === 1} />
+            </motion.div>
           ))}
         </div>
       </div>

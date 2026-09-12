@@ -1,11 +1,50 @@
 @import "tailwindcss";
 
+:root {
+  --bg: #020910;
+  --panel: rgba(13, 23, 35, 0.72);
+  --panel-strong: #0b1521;
+  --cyan: #13d8e9;
+  --cyan-soft: rgba(19, 216, 233, 0.12);
+  --text: #f7fafc;
+  --muted: #a7b0bc;
+}
+
 html {
   scroll-behavior: smooth;
 }
 
 body {
   margin: 0;
-  background: #000;
+  background: var(--bg);
+  color: var(--text);
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+::selection {
+  background: rgba(19, 216, 233, 0.3);
   color: white;
+}
+
+.portfolio-grid {
+  background-image:
+    linear-gradient(rgba(255,255,255,.018) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255,255,255,.018) 1px, transparent 1px);
+  background-size: 42px 42px;
+}
+
+.glow {
+  box-shadow:
+    0 0 0 1px rgba(19, 216, 233, .18),
+    0 20px 70px rgba(0, 220, 255, .08);
+}
+
+.project-preview {
+  background:
+    radial-gradient(circle at 20% 20%, rgba(19,216,233,.25), transparent 32%),
+    linear-gradient(135deg, #172333, #07101a 55%, #02070c);
 }

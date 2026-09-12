@@ -12,6 +12,7 @@ export type Project = {
     value: string;
   }[];
   featured: boolean;
+  image?: string;
 };
 
 export const projects: Project[] = [
@@ -20,23 +21,27 @@ export const projects: Project[] = [
     title: "eForeigner DRC",
     category: "Web Application",
     description:
-      "A digital platform designed to simplify access to immigration-related services in the Democratic Republic of Congo.",
+      "A full-stack digital immigration management platform designed to simplify immigration services for foreigners in the Democratic Republic of Congo.",
     longDescription:
-      "eForeigner DRC is a digital platform concept focused on providing foreigners with a modern way to access immigration services, submit applications and track their requests online.",
+      "eForeigner DRC is a full-stack immigration management platform built to digitize the management of immigration applications in the Democratic Republic of Congo. The platform allows applicants to create accounts, submit applications, upload supporting documents, track their application progress and complete the payment step. Immigration officers can review applications, validate documents, verify medical information and payments, and make immigration decisions. The platform also includes role-based access control, audit logging, secure authentication and a bilingual French-English interface.",
     technologies: [
       "Next.js",
       "React",
       "TypeScript",
       "Tailwind CSS",
+      "Prisma",
       "PostgreSQL",
+      "NextAuth",
+      "Turborepo",
     ],
-    github: "https://github.com/",
+    github:
+      "https://github.com/mulumbakakumba-cpu/eforeigner-drc",
     featured: true,
   },
 
   {
     slug: "movie-recommender",
-    title: "Hybrid Movie Recommender System",
+    title: "Movie Recommender System",
     category: "AI / Machine Learning",
     description:
       "A hybrid machine-learning recommendation system combining TF-IDF content-based filtering with SVD collaborative filtering to generate personalized movie recommendations.",
