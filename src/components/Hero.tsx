@@ -1,7 +1,14 @@
+
 "use client";
 
 import { motion } from "framer-motion";
-import { ArrowRight, Mail, MessageSquare } from "lucide-react";
+import {
+  ArrowUpRight,
+  Mail,
+  MessageCircle,
+  Code2,
+  Sparkles,
+} from "lucide-react";
 
 function GithubIcon({ size = 20 }: { size?: number }) {
   return (
@@ -21,74 +28,157 @@ function LinkedinIcon({ size = 20 }: { size?: number }) {
 
 export default function Hero() {
   return (
-    <section className="portfolio-grid relative min-h-[700px] overflow-hidden px-5 pb-14 pt-28 text-white">
-      <div className="absolute -left-32 top-40 h-80 w-80 rounded-full bg-cyan-500/10 blur-[100px]" />
-      <div className="absolute right-0 top-20 h-96 w-96 rounded-full bg-cyan-500/10 blur-[120px]" />
+    <section className="relative isolate min-h-[780px] overflow-hidden bg-[#050b14] px-5 pb-20 pt-32 text-white sm:pt-36 lg:min-h-[850px] lg:pt-40">
 
-      <div className="relative mx-auto grid max-w-[1180px] items-center gap-10 lg:grid-cols-[1.02fr_.98fr]">
+      {/* Background effects */}
+      <div className="pointer-events-none absolute -left-40 top-20 h-[450px] w-[450px] rounded-full bg-cyan-500/10 blur-[130px]" />
+      <div className="pointer-events-none absolute -right-32 top-40 h-[500px] w-[500px] rounded-full bg-blue-600/10 blur-[140px]" />
+
+      <div className="pointer-events-none absolute inset-0 opacity-[0.035]"
+        style={{
+          backgroundImage: "linear-gradient(rgba(255,255,255,.5) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,.5) 1px, transparent 1px)",
+          backgroundSize: "55px 55px",
+        }}
+      />
+
+      <div className="relative mx-auto grid max-w-[1200px] items-center gap-16 lg:grid-cols-[1.05fr_.95fr]">
+
+        {/* LEFT CONTENT */}
         <motion.div
-          initial={{ opacity: 0, x: -35 }}
-          animate={{ opacity: 1, x: 0 }}
-          transition={{ duration: .7 }}
+          initial={{ opacity: 0, y: 30 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8 }}
         >
-          <div className="mb-5 inline-flex items-center gap-2 rounded-full border border-cyan-400/20 bg-cyan-400/[.04] px-3 py-1.5 text-[11px] font-bold uppercase tracking-wide text-cyan-300">
-            Computer Engineer
-            <span className="h-2 w-2 rounded-full bg-cyan-400 shadow-[0_0_12px_#13d8e9]" />
+          <div className="mb-8 inline-flex items-center gap-3 rounded-full border border-cyan-400/20 bg-cyan-400/[0.06] px-4 py-2">
+            <span className="relative flex h-2.5 w-2.5">
+              <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-cyan-400 opacity-60" />
+              <span className="relative inline-flex h-2.5 w-2.5 rounded-full bg-cyan-400" />
+            </span>
+            <span className="text-[11px] font-bold uppercase tracking-[0.2em] text-cyan-300">
+              Computer Engineer
+            </span>
           </div>
 
-          <h1 className="text-6xl font-black leading-[.9] tracking-tight sm:text-7xl lg:text-[74px]">
-            MULUMBA
-            <span className="block text-cyan-400">KAKUMBA</span>
-          </h1>
-
-          <div className="mt-5 flex flex-wrap items-center gap-x-4 gap-y-2 text-[15px] font-bold">
-            <span>SOFTWARE</span><i className="h-1.5 w-1.5 rounded-full bg-cyan-400" />
-            <span>DATA</span><i className="h-1.5 w-1.5 rounded-full bg-cyan-400" />
-            <span>AI</span><i className="h-1.5 w-1.5 rounded-full bg-cyan-400" />
-            <span>SYSTEMS</span>
-          </div>
-
-          <p className="mt-6 max-w-[560px] text-[16px] leading-7 text-gray-300">
-            I build data-driven, scalable and intelligent digital solutions
-            that solve real-world problems and create meaningful impact.
+          <p className="mb-4 text-sm font-medium uppercase tracking-[0.3em] text-gray-400">
+            Hello, I'm
           </p>
 
-          <div className="mt-7 flex flex-wrap gap-4">
-            <a href="#projects"
-              className="group inline-flex items-center gap-3 rounded-full bg-cyan-400 px-6 py-3 text-sm font-bold text-[#031018] shadow-[0_0_30px_rgba(19,216,233,.18)] transition hover:-translate-y-0.5 hover:bg-cyan-300">
-              View My Work <ArrowRight size={17} className="transition group-hover:translate-x-1" />
+          <h1 className="text-5xl font-black leading-[1.05] tracking-[-0.055em] sm:text-7xl lg:text-[82px]">
+            MULUMBA
+            <span className="mt-2 block bg-gradient-to-r from-cyan-300 via-cyan-400 to-blue-500 bg-clip-text text-transparent">
+              KAKUMBA.
+            </span>
+          </h1>
+
+          <div className="mt-8 flex flex-wrap items-center gap-3 text-xs font-bold uppercase tracking-[0.18em] text-gray-300 sm:text-sm">
+            <span>Software</span>
+            <span className="text-cyan-400">/</span>
+            <span>Data</span>
+            <span className="text-cyan-400">/</span>
+            <span>Artificial Intelligence</span>
+          </div>
+
+          <p className="mt-7 max-w-[550px] text-base leading-8 text-gray-400 sm:text-lg">
+            I design and develop intelligent digital experiences,
+            scalable software solutions and data-driven systems
+            that transform ideas into meaningful impact.
+          </p>
+
+          {/* CTA */}
+          <div className="mt-9 flex flex-wrap gap-4">
+            <a
+              href="#projects"
+              className="group inline-flex items-center gap-3 rounded-xl bg-cyan-400 px-7 py-4 text-sm font-bold text-[#04111b] shadow-[0_8px_35px_rgba(34,211,238,0.18)] transition duration-300 hover:-translate-y-1 hover:bg-cyan-300"
+            >
+              Explore My Work
+              <ArrowUpRight size={18} className="transition-transform group-hover:translate-x-1 group-hover:-translate-y-1" />
             </a>
-            <a href="#contact"
-              className="inline-flex items-center gap-3 rounded-full border border-cyan-400/60 px-6 py-3 text-sm font-bold text-white transition hover:bg-cyan-400/10">
-              Get In Touch <MessageSquare size={17} />
+
+            <a
+              href="#contact"
+              className="inline-flex items-center gap-3 rounded-xl border border-white/15 bg-white/[0.03] px-7 py-4 text-sm font-bold text-white transition duration-300 hover:-translate-y-1 hover:border-cyan-400/50 hover:bg-cyan-400/10"
+            >
+              Let's Talk
+              <MessageCircle size={18} />
             </a>
           </div>
 
-          <div className="mt-7 flex items-center gap-7 text-sm text-gray-300">
-            <a className="inline-flex items-center gap-2 hover:text-cyan-300" href="https://github.com/mulumbakakumba-cpu" target="_blank" rel="noreferrer"><GithubIcon size={20}/> GitHub</a>
-            <a className="inline-flex items-center gap-2 hover:text-cyan-300" href="https://www.linkedin.com/" target="_blank" rel="noreferrer"><LinkedinIcon size={20}/> LinkedIn</a>
-            <a className="inline-flex items-center gap-2 hover:text-cyan-300" href="mailto:mulumba.kakumba@gmail.com"><Mail size={20}/> Email</a>
+          {/* Social links */}
+          <div className="mt-10 flex flex-wrap items-center gap-7 border-t border-white/10 pt-7 text-sm text-gray-400">
+            <a href="https://github.com/mulumbakakumba-cpu" target="_blank" rel="noreferrer" className="inline-flex items-center gap-2 transition hover:text-cyan-300">
+              <GithubIcon size={19} /> GitHub
+            </a>
+            <a href="https://www.linkedin.com/" target="_blank" rel="noreferrer" className="inline-flex items-center gap-2 transition hover:text-cyan-300">
+              <LinkedinIcon size={19} /> LinkedIn
+            </a>
+            <a href="mailto:mulumba.kakumba@gmail.com" className="inline-flex items-center gap-2 transition hover:text-cyan-300">
+              <Mail size={19} /> Email
+            </a>
           </div>
         </motion.div>
 
+        {/* RIGHT IMAGE */}
         <motion.div
-          initial={{ opacity: 0, x: 35, scale: .97 }}
-          animate={{ opacity: 1, x: 0, scale: 1 }}
-          transition={{ duration: .8, delay: .15 }}
-          className="relative flex justify-center lg:justify-end"
+          initial={{ opacity: 0, scale: 0.92, x: 25 }}
+          animate={{ opacity: 1, scale: 1, x: 0 }}
+          transition={{ duration: 1, delay: 0.2 }}
+          className="relative mx-auto w-full max-w-[460px] lg:ml-auto"
         >
-          <div className="absolute -inset-5 rounded-[30px] bg-cyan-400/10 blur-2xl" />
-          <div className="absolute right-[-65px] top-4 hidden h-48 w-48 opacity-50 lg:block"
-            style={{backgroundImage:"radial-gradient(#13d8e9 1px, transparent 1px)",backgroundSize:"18px 18px"}} />
-          <div className="glow relative overflow-hidden rounded-[28px] border border-white/15 bg-[#111a25]">
-            <img
-              src="/images/mulumba-kakumba.jpg"
-              alt="Mulumba Kakumba"
-              className="h-[500px] w-[410px] object-cover object-top sm:h-[540px] sm:w-[440px]"
-            />
-            <div className="absolute inset-0 bg-gradient-to-t from-[#031018]/50 via-transparent to-transparent" />
+          <div className="absolute -inset-8 rounded-[40px] bg-gradient-to-br from-cyan-400/20 to-blue-600/10 blur-3xl" />
+
+          <div className="absolute -right-5 -top-5 h-32 w-32 rounded-full border border-cyan-400/20" />
+          <div className="absolute -bottom-5 -left-5 h-28 w-28 rounded-full border border-blue-400/20" />
+
+          <div className="relative overflow-hidden rounded-[30px] border border-white/10 bg-[#0c1725] p-2 shadow-2xl shadow-cyan-950/40">
+            <div className="relative overflow-hidden rounded-[23px]">
+              <img
+                src="/images/mulumba-kakumba.jpg"
+                alt="Mulumba Kakumba"
+                className="h-[430px] w-full object-cover object-top sm:h-[540px]"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-[#050b14]/75 via-transparent to-transparent" />
+
+              <div className="absolute bottom-6 left-6">
+                <p className="text-xs font-semibold uppercase tracking-[0.25em] text-cyan-300">
+                  Building the Future
+                </p>
+                <p className="mt-2 text-xl font-bold text-white">
+                  Innovation. Technology. Impact.
+                </p>
+              </div>
+            </div>
           </div>
+
+          {/* Floating card */}
+          <motion.div
+            animate={{ y: [0, -10, 0] }}
+            transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
+            className="absolute -left-8 top-16 hidden items-center gap-3 rounded-2xl border border-white/10 bg-[#101d2b]/95 px-5 py-4 shadow-2xl backdrop-blur-xl sm:flex"
+          >
+            <div className="rounded-xl bg-cyan-400/10 p-3 text-cyan-300">
+              <Code2 size={23} />
+            </div>
+            <div>
+              <p className="text-sm font-bold text-white">Software Development</p>
+              <p className="mt-1 text-xs text-gray-400">Creating digital solutions</p>
+            </div>
+          </motion.div>
+
+          <motion.div
+            animate={{ y: [0, 10, 0] }}
+            transition={{ duration: 5, repeat: Infinity, ease: "easeInOut" }}
+            className="absolute -bottom-8 -right-4 hidden items-center gap-3 rounded-2xl border border-white/10 bg-[#101d2b]/95 px-5 py-4 shadow-2xl backdrop-blur-xl sm:flex"
+          >
+            <div className="rounded-xl bg-blue-400/10 p-3 text-blue-300">
+              <Sparkles size={23} />
+            </div>
+            <div>
+              <p className="text-sm font-bold text-white">Innovation</p>
+              <p className="mt-1 text-xs text-gray-400">Ideas into reality</p>
+            </div>
+          </motion.div>
         </motion.div>
+
       </div>
     </section>
   );

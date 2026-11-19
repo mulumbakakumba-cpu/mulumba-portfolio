@@ -38,6 +38,7 @@ export const projects: Project[] = [
       "https://github.com/mulumbakakumba-cpu/cite-bethel",
     demo:
       "https://cite-bethel-n5xe.vercel.app/",
+      image: "/images/projects/cite-bethel.png",
     featured: true,
   },
 
@@ -61,6 +62,7 @@ export const projects: Project[] = [
     ],
     github:
       "https://github.com/mulumbakakumba-cpu/eforeigner-drc",
+      image: "/images/projects/eforeigner-drc.png",
     featured: true,
   },
 
@@ -86,6 +88,7 @@ export const projects: Project[] = [
       "https://github.com/mulumbakakumba-cpu/movie-recommender",
     demo:
       "https://movie-recommender-09.streamlit.app/",
+    
     stats: [
       {
         label: "RMSE",
@@ -100,6 +103,7 @@ export const projects: Project[] = [
         value: "10 / 90",
       },
     ],
+    image: "/images/projects/movie-recommender.jpg",
     featured: true,
   },
 
@@ -118,6 +122,7 @@ export const projects: Project[] = [
       "React",
       "Data Analysis",
     ],
+    image: "/images/projects/university-recommender.jpg",
     featured: true,
   },
 
