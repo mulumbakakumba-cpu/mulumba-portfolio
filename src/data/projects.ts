@@ -1,3 +1,4 @@
+
 export type Project = {
   slug: string;
   title: string;
@@ -16,6 +17,30 @@ export type Project = {
 };
 
 export const projects: Project[] = [
+  {
+    slug: "cite-bethel",
+    title: "Cité Béthel – Lemba Salongo",
+    category: "Full-Stack Web Development",
+    description:
+      "A modern bilingual church website designed to strengthen digital communication, share sermons, manage events and connect the Cité Béthel community.",
+    longDescription:
+      "Cité Béthel is a complete bilingual digital platform developed for the Cité Béthel – Lemba Salongo Christian community in Kinshasa, Democratic Republic of Congo. The website provides visitors with information about the church, worship schedules, events, sermons and service replays. It includes a custom administration dashboard that allows authorized administrators to manage live broadcasts, sermon recordings, events and contact messages. The platform integrates Supabase for authentication, database management and image storage, and is deployed on Vercel.",
+    technologies: [
+      "Next.js",
+      "React",
+      "TypeScript",
+      "Tailwind CSS",
+      "Supabase",
+      "PostgreSQL",
+      "Vercel",
+    ],
+    github:
+      "https://github.com/mulumbakakumba-cpu/cite-bethel",
+    demo:
+      "https://cite-bethel-n5xe.vercel.app/",
+    featured: true,
+  },
+
   {
     slug: "eforeigner-drc",
     title: "eForeigner DRC",
@@ -95,42 +120,44 @@ export const projects: Project[] = [
     ],
     featured: true,
   },
-{
-  slug: "electricity-analytics",
-  title: "Electricity Analytics",
-  category: "Data Analytics",
-  description:
-    "An electricity analytics platform focused on consumption patterns, regional analysis and grid anomaly detection.",
-  longDescription:
-    "This project analyzes 35,040 electricity consumption records across four regions. It uses Python, Pandas, SQL and Streamlit to explore consumption trends, identify anomalies in electricity usage, voltage and power factor, and provide interactive insights through a publicly deployed dashboard.",
-  technologies: [
-    "Python",
-    "Pandas",
-    "NumPy",
-    "SQL",
-    "Streamlit",
-    "Data Visualization",
-  ],
-  github:
-    "https://github.com/mulumbakakumba-cpu/electricity-analytics",
-  demo:
-    "https://electricity-analytics.streamlit.app/",
-  stats: [
-    {
-      label: "Records",
-      value: "35,040",
-    },
-    {
-      label: "Regions",
-      value: "4",
-    },
-    {
-      label: "Anomalies",
-      value: "1,789",
-    },
-  ],
-  featured: true,
-},
+
+  {
+    slug: "electricity-analytics",
+    title: "Electricity Analytics",
+    category: "Data Analytics",
+    description:
+      "An electricity analytics platform focused on consumption patterns, regional analysis and grid anomaly detection.",
+    longDescription:
+      "This project analyzes 35,040 electricity consumption records across four regions. It uses Python, Pandas, SQL and Streamlit to explore consumption trends, identify anomalies in electricity usage, voltage and power factor, and provide interactive insights through a publicly deployed dashboard.",
+    technologies: [
+      "Python",
+      "Pandas",
+      "NumPy",
+      "SQL",
+      "Streamlit",
+      "Data Visualization",
+    ],
+    github:
+      "https://github.com/mulumbakakumba-cpu/electricity-analytics",
+    demo:
+      "https://electricity-analytics.streamlit.app/",
+    stats: [
+      {
+        label: "Records",
+        value: "35,040",
+      },
+      {
+        label: "Regions",
+        value: "4",
+      },
+      {
+        label: "Anomalies",
+        value: "1,789",
+      },
+    ],
+    featured: true,
+  },
+
   {
     slug: "database-management",
     title: "Database Management System",
